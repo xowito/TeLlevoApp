@@ -7,26 +7,21 @@
 <ion-content>
 
 
-<ion-grid class="sticky-top">
-  <ion-item>
-    <ion-label position="floating">Username</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item-divider></ion-item-divider>
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input  type="password" class="ion-align-self-center"></ion-input>
-  </ion-item>
-  
-  <ion-button expand="block" (click)="welcome()">Iniciar Sesion</ion-button>
-</ion-grid>
-  
+  <ion-grid>
+    <ion-icon size="large" name="person-circle"></ion-icon>
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item-divider></ion-item-divider>
+    <ion-icon size="large" name="key"></ion-icon>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" class="ion-align-self-center"></ion-input>
+    </ion-item>
 
-
-
-
-
-
+    <ion-button expand="block" (click)="welcome()">Iniciar Sesion</ion-button>
+  </ion-grid>
 
 
 
