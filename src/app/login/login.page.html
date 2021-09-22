@@ -5,28 +5,30 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <div>
-        <ion-icon size="large" name="person-circle"></ion-icon>
-        <ion-item>
-          <ion-label position="floating" class="ion-align-self-center">Username</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item-divider color="(0,0,0)"></ion-item-divider>
-        <ion-icon size="large" name="key"></ion-icon>
-        <ion-item>
-          <ion-label position="floating" class="ion-align-self-center">Password</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-        <ion-item>
+  <div>
+    <ion-grid>
+      <ion-row>
+        <div>
           <ion-icon size="large" name="person-circle"></ion-icon>
-          <ion-label>Username</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-        <ion-item-divider color="(0,0,0)"></ion-item-divider>
-        <ion-button expand="block" (click)="welcome()">Iniciar Sesion</ion-button>
-      </div>
-    </ion-row>
-  </ion-grid>
+          <ion-item>
+            <ion-label position="floating" class="ion-align-self-center">Username</ion-label>
+            <ion-input placeholder="Username"></ion-input>
+          </ion-item>
+          <ion-item-divider color="(0,0,0)"></ion-item-divider>
+          <ion-icon size="large" name="key"></ion-icon>
+          <ion-item>
+            <ion-label position="floating" class="ion-align-self-center">Password</ion-label>
+            <ion-input placeholder="Password" type="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon size="large" name="person-circle"></ion-icon>
+
+            <ion-input placeholder="Username"></ion-input>
+          </ion-item>
+          <ion-item-divider color="(0,0,0)"></ion-item-divider>
+          <ion-button expand="block" (click)="welcome()">Iniciar Sesion</ion-button>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
