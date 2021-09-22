@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  @ViewChild ('username') user;
+  @ViewChild ('password') password;
+
+  constructor(private router: Router, private alertCtrl: AlertController) { }
 
   ngOnInit() {
+  }
+
+  welcome(){
+    this.router.navigate(['../welcome']);
   }
 
 }
