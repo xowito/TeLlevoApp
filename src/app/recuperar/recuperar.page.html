@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="center">Recuperar contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="center">Recuperar contraseña</h2>
+  <ion-grid class="caja">
+    <ion-item>
+      <ion-icon size="large" name="person-circle"></ion-icon>&nbsp;
+      <ion-input type="text" value="" placeholder="Username" #username></ion-input>
+    </ion-item>
+    <ion-item-divider ></ion-item-divider>
+    <ion-item>
+      <ion-icon name="mail"></ion-icon>&nbsp;
+      <ion-input type="mail" value="" placeholder="Correo" #mail></ion-input>
+    </ion-item>
+    <ion-item-divider style="padding-top: -2%;"></ion-item-divider>
+    <ion-item>
+      <ion-textarea class="center" type="text" color="danger" value="" disabled #mensaje></ion-textarea>
+    </ion-item>
+      <ion-button expand="block" color="success" (click)="recuperar()">Enviar correo</ion-button>
+  </ion-grid>
+</ion-content>

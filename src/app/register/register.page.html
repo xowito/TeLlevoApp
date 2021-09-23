@@ -1,31 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Register</ion-title>
+    <ion-title class="center">Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-content>
-
-
-    <ion-grid>
-      <ion-item>
-        <ion-label position="stacked">Username</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <ion-item-divider></ion-item-divider>
-      <ion-item>
-        <ion-label position="stacked">Password</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <ion-item-divider></ion-item-divider>
-      <ion-item>
-        <ion-label position="stacked">Confirm Password</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-
-      <ion-button expand="block" (click)="login()">Crear Cuenta</ion-button>
-    </ion-grid>
-
-
-  </ion-content>
+  <h2 class="center">Registrarse</h2>
+  <ion-grid class="caja">
+    <ion-item>
+      <ion-icon size="large" name="person-circle"></ion-icon>&nbsp;
+      <ion-input type="text" value="" placeholder="Username" #username></ion-input>
+    </ion-item>
+    <ion-item-divider></ion-item-divider>
+    <ion-item>
+      <ion-icon size="large" name="lock-closed-outline"></ion-icon>&nbsp;
+      <ion-input type="password" value="" placeholder="Password" #password></ion-input>
+    </ion-item>
+    <ion-item-divider></ion-item-divider>
+    <ion-item>
+      <ion-icon size="large" name="lock-closed-outline"></ion-icon>&nbsp;
+      <ion-input type="password" value="" placeholder="Repeat Password" #password></ion-input>
+    </ion-item>
+    <ion-item-divider></ion-item-divider>
+    <ion-item style="background-color:#121212;">
+      <ion-input class="center" type="text" color="danger" value="" disabled #mensaje></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="success">Registrarse</ion-button>
+  </ion-grid>
+</ion-content>

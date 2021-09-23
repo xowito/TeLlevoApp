@@ -1,23 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title class="center">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid size="4">
+  <h2 class="center">Iniciar sesion</h2>
+  <ion-grid class="caja">
     <ion-item>
-      <ion-icon size="large" name="person-circle"></ion-icon>
-
-      <ion-input placeholder="Username"></ion-input>
+      <ion-icon size="large" name="person-circle"></ion-icon>&nbsp;
+      <ion-input type="text" value="" placeholder="Username" #username></ion-input>
     </ion-item>
-    <ion-item-divider color="(0,0,0)"></ion-item-divider>
+    <ion-item-divider ></ion-item-divider>
     <ion-item>
-      <ion-icon size="large" name="lock-closed-outline"></ion-icon>
-
-      <ion-input placeholder="Password"></ion-input>
+      <ion-icon size="large" name="lock-closed-outline"></ion-icon>&nbsp;
+      <ion-input type="password" value="" placeholder="Password" #password></ion-input>
     </ion-item>
-    <ion-item-divider color="(0,0,0)"></ion-item-divider>
-    <ion-button expand="block" (click)="welcome()">Iniciar Sesion</ion-button>
+    <ion-item-divider ></ion-item-divider>
+    <ion-item>
+      <ion-input class="center" type="text" color="danger" value="" disabled #mensaje></ion-input>
+    </ion-item>
+    <ion-button  expand="block" (click)="login()" color="success">Iniciar Sesion</ion-button>
+    <ion-button expand="block"  (click)="recuperar()">Recuperar contraseña</ion-button>
   </ion-grid>
 </ion-content>
