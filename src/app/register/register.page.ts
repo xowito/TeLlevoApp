@@ -11,7 +11,7 @@ import { AlertController } from '@ionic/angular';
 export class RegisterPage implements OnInit {
   formRegistro:FormGroup;
 
-  constructor(private Router: Router, private fb: FormBuilder, private alertController: AlertController) {
+  constructor(private router: Router, private fb: FormBuilder, private alertController: AlertController) {
     this.formRegistro = this.fb.group({
       'User': new FormControl("",Validators.required),
       'Correo': new FormControl("",Validators.required),
@@ -47,6 +47,7 @@ export class RegisterPage implements OnInit {
       Password2: f.Password2
     }
 
-    localStorage.setItem('usuario',JSON.stringify(usuario))
+    localStorage.setItem('usuario',JSON.stringify(usuario));
+    this.router.navigate(['../login'])
   }
 }

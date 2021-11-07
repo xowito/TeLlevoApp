@@ -6,17 +6,21 @@
 <ion-content class="bg-content">
   <ion-card class="center caja bg-cajita">
     <ion-card-header>
-      Iniciar Sesion
+      Iniciar sesion
     </ion-card-header>
     <ion-card-content>
+      <form [formGroup]="formLogin" (keyup.enter)="ingresar()" class="bg-cajita">
         <ion-item class="bg-cajita">
-          <ion-label position="floating">Correo</ion-label>
-          <ion-input formControlName="Correo"></ion-input>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input formControlName="User"></ion-input>
         </ion-item>
         <ion-item class="bg-cajita">
           <ion-label position="floating">Contraseña</ion-label>
-          <ion-input formControlName="Password1" type="password"></ion-input>
+          <ion-input formControlName="Password" type="password"></ion-input>
         </ion-item>
+        <hr>
+        <ion-button (click)="ingresar()">Iniciar sesion</ion-button>
+      </form>
     </ion-card-content>
   </ion-card>
 </ion-content>
