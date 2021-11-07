@@ -3,17 +3,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="bg-content">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Bienvenido</ion-card-subtitle>
+      <ion-card-subtitle class="titulo">Bienvenido</ion-card-subtitle>
       <ion-card-title>Nombre Usuario</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      Nombre:{{usuario.User}}
+      Nombre:
       <br>
-      Correo:{{usuario.Correo}}
+      Correo:
       <br>
     </ion-card-content>
   </ion-card>

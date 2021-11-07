@@ -13,7 +13,14 @@ export class RecuperarPage implements OnInit {
 
   constructor(private router: Router) {
   }
+  doRefresh(event) {
+    console.log('Begin async operation');
 
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 500);
+  }
   recuperar() {
     if (this.user.value == "tellevo" && this.mail.value == "tellevoapp@gmail.com") {
       this.mensaje.color = "success";

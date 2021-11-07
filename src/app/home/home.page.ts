@@ -9,7 +9,14 @@ import { Router } from '@angular/router';
 export class HomePage {
 
   constructor(private router: Router) {}
+  doRefresh(event) {
+    console.log('Begin async operation');
 
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 500);
+  }
   login(){
     this.router.navigate(['../login']);
   }

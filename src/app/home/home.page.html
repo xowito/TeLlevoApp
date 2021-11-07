@@ -3,7 +3,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="bg-content">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <h2 class="center" style="margin-top :5%">Bienvenido a TeLlevoApp</h2>
   <ion-grid class="caja" style="margin-top :5%">
     <ion-button class="caja"size="large" expand="block" (click)="login()">Iniciar Sesion</ion-button>

@@ -9,25 +9,32 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  formRegistro:FormGroup;
+  formRegistro: FormGroup;
 
   constructor(private router: Router, private fb: FormBuilder, private alertController: AlertController) {
     this.formRegistro = this.fb.group({
-      'User': new FormControl("",Validators.required),
-      'Correo': new FormControl("",Validators.required),
-      'Password1': new FormControl("",Validators.required),
-      'Password2': new FormControl("",Validators.required),
+      'User': new FormControl("", Validators.required),
+      'Correo': new FormControl("", Validators.required),
+      'Password1': new FormControl("", Validators.required),
+      'Password2': new FormControl("", Validators.required),
     })
-   }
+  }
+  doRefresh(event) {
+    console.log('Begin async operation');
 
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 500);
+  }
   ngOnInit() {
   }
 
 
-  async guardar(){
+  async guardar() {
     var f = this.formRegistro.value;
 
-    if(this.formRegistro.invalid){
+    if (this.formRegistro.invalid) {
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: 'Registro incompleto',
@@ -47,7 +54,7 @@ export class RegisterPage implements OnInit {
       Password2: f.Password2
     }
 
-    localStorage.setItem('usuario',JSON.stringify(usuario));
+    localStorage.setItem('usuario', JSON.stringify(usuario));
     this.router.navigate(['../login'])
   }
 }

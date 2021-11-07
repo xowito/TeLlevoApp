@@ -9,6 +9,15 @@ export class WelcomePage implements OnInit {
 
 
   constructor() { }
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 500);
+  }
+
 
   ngOnInit() {
   }
