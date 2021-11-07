@@ -25,11 +25,14 @@ export class LoginPage implements OnInit {
   }
   ngOnInit() {
   }
-  recuperar(){
+  recuperar() {
     this.router.navigate(['../recuperar'])
   }
+
+  doRefresh(event) {
+
+    setTimeout(() => {
+      event.target.complete();
+    }, 1500);
+  }
 }
- 
-
-
-
