@@ -1,30 +1,34 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="center">Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h2 class="center">Registrarse</h2>
-  <ion-grid class="caja">
-    <ion-item>
-      <ion-icon size="large" name="person-circle"></ion-icon>&nbsp;
-      <ion-input type="text" value="" placeholder="Username" #username></ion-input>
-    </ion-item>
-    <ion-item-divider></ion-item-divider>
-    <ion-item>
-      <ion-icon size="large" name="lock-closed-outline"></ion-icon>&nbsp;
-      <ion-input type="password" value="" placeholder="Password" #password></ion-input>
-    </ion-item>
-    <ion-item-divider></ion-item-divider>
-    <ion-item>
-      <ion-icon size="large" name="lock-closed-outline"></ion-icon>&nbsp;
-      <ion-input type="password" value="" placeholder="Repeat Password" #password></ion-input>
-    </ion-item>
-    <ion-item-divider></ion-item-divider>
-    <ion-item style="background-color:#121212;">
-      <ion-input class="center" type="text" color="danger" value="" disabled #mensaje></ion-input>
-    </ion-item>
-    <ion-button expand="block" color="success">Registrarse</ion-button>
-  </ion-grid>
+<ion-content class="bg-content">
+  <ion-card class="center caja bg-cajita">
+    <ion-card-header>
+      Registro
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formRegistro" (keyup.enter)="guardar()" class="bg-cajita">
+        <ion-item class="bg-cajita">
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input formControlName="User"></ion-input>
+        </ion-item>
+        <ion-item class="bg-cajita">
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input formControlName="Correo"></ion-input>
+        </ion-item>
+        <ion-item class="bg-cajita">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="Password1" type="password"></ion-input>
+        </ion-item>
+        <ion-item class="bg-cajita">
+          <ion-label position="floating">Repetir contraseña</ion-label>
+          <ion-input formControlName="Password2" type="password"></ion-input>
+        </ion-item>
+        <hr>
+        <ion-button (click)="guardar()">Registrarse</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

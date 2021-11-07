@@ -4,6 +4,15 @@
 ion-content{
   --background:url(../../assets/image/1366_2000.jpeg) no-repeat 0 0/100% 100%!important
 }
+ion-toolbar{
+  --background:url(../../assets/image/log.png) no-repeat 0 0/100% 100%!important;
+}
+.bg-content{
+  --background: #012C56;
+  --background: -moz-linear-gradient(top, #012C56 0%, #012C56 41%, #FFB71B 100%);
+  --background: -webkit-linear-gradient(top, #012C56 0%, #012C56 41%, #FFB71B 100%);
+  --background: linear-gradient(to bottom, #012C56 0%, #012C56 41%, #FFB71B 100%);
+}
 h2{
   font-weight: 900;
   font-size: 260%;
