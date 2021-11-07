@@ -3,23 +3,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h2 class="center">Iniciar sesion</h2>
-  <ion-grid class="caja">
-    <ion-item>
-      <ion-icon size="large" name="person-circle"></ion-icon>&nbsp;
-      <ion-input type="text" value="" placeholder="Username" #username></ion-input>
-    </ion-item>
-    <ion-item-divider ></ion-item-divider>
-    <ion-item>
-      <ion-icon size="large" name="lock-closed-outline"></ion-icon>&nbsp;
-      <ion-input type="password" value="" placeholder="Password" #password></ion-input>
-    </ion-item>
-    <ion-item-divider ></ion-item-divider>
-    <ion-item>
-      <ion-input class="center" type="text" color="danger" value="" disabled #mensaje></ion-input>
-    </ion-item>
-    <ion-button  expand="block" (click)="login()" color="success">Iniciar Sesion</ion-button>
-    <ion-button expand="block"  (click)="recuperar()">Recuperar contraseña</ion-button>
-  </ion-grid>
+<ion-content class="bg-content">
+  <ion-card class="center caja bg-cajita">
+    <ion-card-header>
+      Iniciar Sesion
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item class="bg-cajita">
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input formControlName="Correo"></ion-input>
+        </ion-item>
+        <ion-item class="bg-cajita">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="Password1" type="password"></ion-input>
+        </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
