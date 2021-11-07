@@ -30,8 +30,7 @@ export class RegisterPage implements OnInit {
     if(this.formRegistro.invalid){
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
-        header: 'Alert',
-        subHeader: 'Subtitle',
+        header: 'Registro incompleto',
         message: 'Rellena todos los campos antes de registrarte',
         buttons: ['OK']
       });
