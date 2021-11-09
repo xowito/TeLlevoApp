@@ -19,6 +19,7 @@ export class LoginPage implements OnInit {
   constructor(private router: Router, private alertController: AlertController, private fb: FormBuilder) {
     this.formLogin = this.fb.group({
       'User': new FormControl("",Validators.required),
+      'Correo': new FormControl("",Validators.required),
       'Password': new FormControl("",Validators.required)
 
     })
@@ -31,7 +32,7 @@ export class LoginPage implements OnInit {
 
     if(usuario.User == f.User && usuario.Password1 == f.Password){
       localStorage.setItem('ingresado','true')
-      this.router.navigate(['../welcome']);
+      this.router.navigate(['../menu/welcome']);
     }else{
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
