@@ -10,6 +10,10 @@ const routes: Routes = [
     children:[{
         path: 'welcome',
         loadChildren: () => import('../welcome/welcome.module').then( m => m.WelcomePageModule),
+    },
+    {
+      path: 'perfil',
+      loadChildren: () => import('../perfil/perfil.module').then( m => m.PerfilPageModule)
     }]
   }
 ];

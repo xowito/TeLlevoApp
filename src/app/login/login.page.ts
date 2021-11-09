@@ -13,9 +13,6 @@ import { pathToFileURL } from 'url';
 export class LoginPage implements OnInit {
   formLogin : FormGroup;
 
-  @ViewChild ('username') user;
-  @ViewChild ('password') password;
-  @ViewChild ('mensaje') mensaje;
   constructor(private router: Router, private alertController: AlertController, private fb: FormBuilder) {
     this.formLogin = this.fb.group({
       'User': new FormControl("",Validators.required),

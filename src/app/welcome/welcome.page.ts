@@ -24,7 +24,6 @@ export class WelcomePage implements OnInit {
 
 
   ngOnInit() {
-    console.log("hola")
     this.getConductores().subscribe(res =>{
       console.log("Res",res)
       this.conductores = res;

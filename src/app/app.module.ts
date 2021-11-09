@@ -7,9 +7,10 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { PerfilPipe } from './perfil.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PerfilPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -26,6 +26,7 @@ export class MenuPage implements OnInit {
 
   ngOnInit() {
   }
+ 
 
   cambiarIndiceSeleccionado(i){
     this.indiceSeleccionado = i;
@@ -53,5 +54,6 @@ export class MenuPage implements OnInit {
     await alert.present();
   }
   
+
 
 }

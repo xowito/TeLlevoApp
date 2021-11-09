@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-content">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card class="center caja bg-cajita">
+    <ion-card-header>
+      Perfil
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item class="bg-cajita" *ngFor="let user of usuario">
+          <ion-label position="floating">Nombre</ion-label>
+        </ion-item>
+        <ion-item class="bg-cajita">
+          <ion-label position="floating">Correo</ion-label>
+        </ion-item>
+        <hr>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
