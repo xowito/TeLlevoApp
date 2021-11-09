@@ -1,31 +1,22 @@
 {
     "data": [
         {
-            "nombre": "Yin",
+            "nombre": "Kim Jong",
             "edad": 48,
-            "capacidad": 3,
-            "viajes": 9,
             "vehiculo": "Chery tiggo 3",
-            "color": "Naranjo",
-            "image": "Yin.jpg"
+            "image": "kim.jpg"
 
         },
         {
             "nombre":"Elon Musk",
             "edad": 50,
-            "capacidad": 3,
-            "viajes": 15,
             "vehiculo": "Tesla Model S",
-            "color": "Blanco",
             "image": "ElonMusk.jpg"
         },
         {
             "nombre": "Louis Chevrolet",
             "edad": 68,
-            "capacidad": 2,
-            "viajes": 5,
             "vehiculo": "Chevrolet Camaro ZL1",
-            "color": "Negro",
             "image": "Louis.jpg"
         }
 

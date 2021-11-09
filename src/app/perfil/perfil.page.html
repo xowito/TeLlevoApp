@@ -15,18 +15,18 @@
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <ion-card class="center caja bg-cajita">
-    <ion-card-header>
-      Perfil
+  <ion-card class="card">
+    <ion-card-header class="card-header">
+      <img src="">
     </ion-card-header>
-    <ion-card-content>
-        <ion-item class="bg-cajita" *ngFor="let user of usuario">
-          <ion-label position="floating">Nombre</ion-label>
+    <ion-card-content class="content">
+        <ion-item *ngFor="let user of usuario">
         </ion-item>
-        <ion-item class="bg-cajita">
-          <ion-label position="floating">Correo</ion-label>
-        </ion-item>
-        <hr>
+        <h1 style="color: white;">hola...</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
