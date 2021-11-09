@@ -12,9 +12,12 @@
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <h2 class="center" style="margin-top :5%">Bienvenido a TeLlevoApp</h2>
-  <ion-grid class="caja" style="margin-top :5%">
-    <ion-button class="caja"size="large" expand="block" (click)="login()">Iniciar Sesion</ion-button>
-  <ion-button style="margin-top :5%" class="caja"color="primary" size="large" expand="block" (click)="register()">Registrarse</ion-button>
-  </ion-grid>
+  <h2 class="center" style="margin-top :15%; color:white;">Bienvenido</h2>
+  <h2 class="center" style="margin-top :-4%;"> a TeLlevoApp</h2>
+  <ion-card>
+    <ion-card-content>
+      <ion-button  size="large" class="caja"expand="block" (click)="login()">Iniciar Sesion</ion-button>
+      <ion-button style="margin-top :10%" class="register caja" size="large" expand="block" (click)="register()">Registrarse</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

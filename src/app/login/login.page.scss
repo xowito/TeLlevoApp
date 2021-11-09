@@ -2,7 +2,7 @@
     text-align: center;
 }
 ion-toolbar{
-    --background:url(../../assets/image/log.png) no-repeat 0 0/100% 100%!important;
+    --background:#202020;
 }
 .bg-content{
     --background: #012C56;
@@ -16,5 +16,17 @@ h2{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .caja{
-    margin-top: 3%; margin-left: 10%;margin-right: 10%;border-radius:15px;border-color:aquamarine; border:2px solid; box-shadow:aqua 5px 5px 10px; padding:1;
+    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+    border-radius:9%;
+}
+
+ion-button{
+    --background:#FFB71B;
+}
+ion-card-header{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+    color:#FFB71B;    
 }
