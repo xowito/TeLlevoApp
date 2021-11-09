@@ -15,18 +15,28 @@
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle class="titulo">Bienvenido</ion-card-subtitle>
-      <ion-card-title>Nombre Usuario</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Nombre:
-      <br>
-      Correo:
-      <br>
-    </ion-card-content>
-  </ion-card>
+<ion-card>
+  <ion-card-header class="center">
+    <h2>Conductores</h2>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let conductor of conductores">
+        <ion-avatar slot="start">
+          <img src="../../assets/image/{{conductor.image}}">
+        </ion-avatar>
+        <ion-label>
+          <h2>Nombre: {{conductor.nombre}}</h2>
+          <h3>Modelo: {{conductor.vehiculo}}</h3>
+          <h3>Edad: {{conductor.edad}} años</h3>
+          <h3>Capacidad: {{conductor.capacidad}}</h3>
+          <h3>Viajes realizados: {{conductor.viajes}}</h3>
+          <h3>Color del Vehiculo: {{conductor.color}}</h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
   
 </ion-content>

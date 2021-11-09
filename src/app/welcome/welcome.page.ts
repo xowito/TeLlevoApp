@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-welcome',
@@ -6,9 +8,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./welcome.page.scss'],
 })
 export class WelcomePage implements OnInit {
+  conductores: any =[];
 
 
-  constructor() { }
+  constructor( private http: HttpClient) { }
+
   doRefresh(event) {
     console.log('Begin async operation');
 
@@ -20,6 +24,20 @@ export class WelcomePage implements OnInit {
 
 
   ngOnInit() {
-  }
+    console.log("hola")
+    this.getConductores().subscribe(res =>{
+      console.log("Res",res)
+      this.conductores = res;
 
+    })
+  }
+  getConductores(){
+    return this.http
+    .get('assets/files/conductores.json')
+    .pipe(
+      map((resp: any) =>{
+        return resp.data
+      })
+    )
+  }
 }

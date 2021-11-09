@@ -7,7 +7,7 @@
             "viajes": 9,
             "vehiculo": "Chery tiggo 3",
             "color": "Naranjo",
-            "licencia": "al dia"
+            "image": "Yin.jpg"
 
         },
         {
@@ -17,7 +17,7 @@
             "viajes": 15,
             "vehiculo": "Tesla Model S",
             "color": "Blanco",
-            "licencia": "al dia"
+            "image": "ElonMusk.jpg"
         },
         {
             "nombre": "Louis Chevrolet",
@@ -26,7 +26,7 @@
             "viajes": 5,
             "vehiculo": "Chevrolet Camaro ZL1",
             "color": "Negro",
-            "licencia": "al dia"
+            "image": "Louis.jpg"
         }
 
 
