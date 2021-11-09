@@ -23,15 +23,17 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule),
     canActivate: [NoIngresadoGuard]
   },
-  {
-    path: 'welcome',
-    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule),
-    canActivate: [IngresadoGuard]
-  },
+ 
   {
     path: 'recuperar',
     loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule),
+    canActivate: [IngresadoGuard]
+  },
+
 
 ];
 
