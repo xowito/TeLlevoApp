@@ -1,9 +1,34 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>conductor</ion-title>
+    <ion-title>{{nombre}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card class="card">
+    <ion-card-header class="center titulo">
+      <img class="img" src="../../assets/image/{{image}}">
+      <h2>Edad: {{edad}}</h2>
+      <h2>Vehiculo: {{vehiculo}}</h2>
+    </ion-card-header>
+    <ion-card-content>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="center-normal">
+    <ion-card-header >
+      <h2>Fotos del vehiculo</h2>
+    </ion-card-header>
+    <ion-card-content>
+      
+      <ion-item-sliding>
+        <ion-item>
+          <img src="../../assets/image/{{vim}}" alt="Camaro">
+        </ion-item>
+        
+        <ion-item-options side="end">
+          <img src="../../assets/image/{{vim2}}" alt="Camaro">
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

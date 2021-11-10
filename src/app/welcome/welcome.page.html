@@ -19,7 +19,7 @@
   <ion-card-header class="center titulo">
     <img class="img" src="../../assets/image/{{conductor.image}}">
     <h2>{{conductor.nombre}}</h2>
-    <ion-button color="clear" outline href="../conductor.html">Ver perfil</ion-button>
+    <ion-button color="clear" outline [routerLink]="['/conductor',conductor.id]">Ver perfil</ion-button>
   </ion-card-header>
   <ion-card-content>
   </ion-card-content>
