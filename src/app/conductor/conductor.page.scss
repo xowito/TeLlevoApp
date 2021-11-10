@@ -18,25 +18,21 @@ ion-toolbar{
     font-size: 25px;
     font-weight: 700;
     font-style: italic;
-    color:#FFB71B; 
+    color:#FFB71B;
 }
 
 .card{
     position: relative;
-    width: 280px;
-    height: 350px;
-    margin: 50px;
-    --background: #202020;
-    border-radius: 30px;
-    border-bottom-left-radius: 160px;
-    border-bottom-right-radius: 160px;
-    box-shadow: 0 15px 0 #fff,
-    inset 0 15px 0 rgba(255,255,255,0.25),
-    0 45px 0 rgba(0,0,0,0.15);
-    overflow: hidden;
+    width: 300px;
+    height:300px;
+    margin: 30px;
+    --background: rgba(255,255,255, 0.05);
+    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    backdrop-filter: blur(10px);
 }
 
 .img{
@@ -45,7 +41,10 @@ ion-toolbar{
     height: 100px;
     border: 2px;
     border-radius: 100px;
+    display: block;
+    position: relative;
 }
 .center-normal{
     text-align: center;
 }
+

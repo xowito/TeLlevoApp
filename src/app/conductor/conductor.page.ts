@@ -45,4 +45,11 @@ export class ConductorPage implements OnInit {
       })
     )
   }
+
+  doRefresh(event) {
+
+    setTimeout(() => {
+      event.target.complete();
+    }, 500);
+  }
 }

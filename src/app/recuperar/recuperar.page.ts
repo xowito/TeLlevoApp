@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-recuperar',
   templateUrl: './recuperar.page.html',
@@ -7,12 +9,9 @@ import { Router } from '@angular/router';
 })
 export class RecuperarPage implements OnInit {
 
-  @ViewChild('username') user;
-  @ViewChild('mail') mail;
-  @ViewChild('mensaje') mensaje;
+  constructor(private router: Router, private alertController: AlertController) {
 
-  constructor(private router: Router) {
-  }
+    }
   doRefresh(event) {
     console.log('Begin async operation');
 
@@ -21,17 +20,21 @@ export class RecuperarPage implements OnInit {
       event.target.complete();
     }, 500);
   }
-  recuperar() {
-    if (this.user.value == "tellevo" && this.mail.value == "tellevoapp@gmail.com") {
-      this.mensaje.color = "success";
-      this.mensaje.value = "Se ha enviado un enlace de confirmación a su correo.";
-    } else {
-      this.mensaje.value = "Asegurate de que sea un correo o usuario valido.";
-    }
+  async enviar() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Correo enviado',
+      message: 'Se ha enviado un correo para reestablecer su contraseña',
+      buttons: ['OK']
+    });
 
+    await alert.present();
+    return;
   }
+ngOnInit() {
+}
 
-  ngOnInit() {
-  }
-
+volver(){
+  this.router.navigate(['../login'])
+}
 }

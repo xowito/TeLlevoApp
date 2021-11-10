@@ -1,18 +1,24 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="center-normal">
     <ion-title>{{nombre}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-card class="card">
-    <ion-card-header class="center titulo">
-      <img class="img" src="../../assets/image/{{image}}">
-      <h2>Edad: {{edad}}</h2>
-      <h2>Vehiculo: {{vehiculo}}</h2>
+    <ion-card-header class="center-normal titulo">
+      <img class="center-normal" src="../../assets/image/{{image}}">
+      <h1><ion-button color="dark" round outline size="large">Consultar Hora</ion-button></h1>
     </ion-card-header>
-    <ion-card-content>
-    </ion-card-content>
+
   </ion-card>
   <ion-card class="center-normal">
     <ion-card-header >
@@ -29,6 +35,7 @@
           <img src="../../assets/image/{{vim2}}" alt="Camaro">
         </ion-item-options>
       </ion-item-sliding>
+      <h2>{{vehiculo}}</h2>
     </ion-card-content>
   </ion-card>
 </ion-content>

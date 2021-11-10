@@ -12,21 +12,25 @@
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <h2 class="center">Recuperar contraseña</h2>
-  <ion-grid class="caja">
-    <ion-item>
-      <ion-icon size="large" name="person-circle"></ion-icon>&nbsp;
-      <ion-input type="text" value="" placeholder="Username" #username></ion-input>
-    </ion-item>
-    <ion-item-divider ></ion-item-divider>
-    <ion-item>
-      <ion-icon name="mail"></ion-icon>&nbsp;
-      <ion-input type="mail" value="" placeholder="Correo" #mail></ion-input>
-    </ion-item>
-    <ion-item-divider style="padding-top: -2%;"></ion-item-divider>
-    <ion-item>
-      <ion-textarea class="center" type="text" color="danger" value="" disabled #mensaje></ion-textarea>
-    </ion-item>
-      <ion-button expand="block" color="success" (click)="recuperar()">Enviar correo</ion-button>
-  </ion-grid>
+  <ion-card class="center caja bg-cajita">
+    <ion-card-header>
+      Recuperar Contraseña
+    </ion-card-header>
+    <ion-card-content>
+      <div class="center caja bg-cajita">
+        <ion-item class="center">
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item class="center">
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </div>
+        <ion-item>
+          <ion-button (click)="enviar()">Enviar</ion-button>
+          <ion-button (click)="volver()">Volver</ion-button>
+        </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
