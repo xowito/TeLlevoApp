@@ -1,23 +1,32 @@
 {
     "data": [
         {
+            "id": 1,
             "nombre": "Kim Jong",
             "edad": 48,
             "vehiculo": "Chery tiggo 3",
-            "image": "kim.jpg"
+            "image": "kim.jpg",
+            "vim": "Chery1.jpg",
+            "vim2": "Chery2.jpg"
 
         },
         {
+            "id": 2,
             "nombre":"Elon Musk",
             "edad": 50,
             "vehiculo": "Tesla Model S",
-            "image": "ElonMusk.jpg"
+            "image": "ElonMusk.jpg",
+            "vim": "Tesla1.png",
+            "vim2": "Tesla2.png"
         },
         {
+            "id": 3,
             "nombre": "Louis Chevrolet",
             "edad": 68,
             "vehiculo": "Chevrolet Camaro ZL1",
-            "image": "Louis.jpg"
+            "image": "Louis.jpg",
+            "vim": "Camaro1.jpg",
+            "vim2": "Camaro2.jpg"
         }
 
 
