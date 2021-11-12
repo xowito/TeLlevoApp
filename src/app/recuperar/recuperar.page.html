@@ -17,20 +17,20 @@
       Recuperar Contraseña
     </ion-card-header>
     <ion-card-content>
-      <div class="bg-cajita">
+      <form [formGroup]="formRecuperar" (keyup.enter)="enviar()" class="bg-cajita">
         <ion-item class="bg-cajita">
           <ion-label position="floating">Usuario</ion-label>
-          <ion-input></ion-input>
+          <ion-input formControlName="User"></ion-input>
         </ion-item>
         <ion-item class="bg-cajita">
-          <ion-label position="floating">Correo</ion-label>
-          <ion-input type="mail"></ion-input>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="Correo" type="mail"></ion-input>
         </ion-item>
         <hr>
         <ion-button (click)="enviar()">Enviar</ion-button>
         <hr>
         <ion-button (click)="volver()">Volver</ion-button>
-        </div>
+      </form>
     </ion-card-content>
   </ion-card>
 </ion-content>

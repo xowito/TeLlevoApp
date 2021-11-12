@@ -1,6 +1,11 @@
 <ion-header>
-  <ion-toolbar class="center-normal">
-    <ion-title>{{nombre}}</ion-title>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-title>
+        {{nombre}}
+      </ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -14,12 +19,18 @@
     </ion-refresher-content>
   </ion-refresher>
   <ion-card class="card">
-    <ion-card-header class="center-normal titulo">
-      <img class="center-normal" src="../../assets/image/{{image}}">
-      <h1><ion-button color="dark" round outline size="large">Consultar Hora</ion-button></h1>
-    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <ion-avatar>
+          <img src="../../assets/image/{{image}}">
+        </ion-avatar>
+        <ion-label class="label">Edad:{{edad}}</ion-label>
+        <ion-label class="label">Viajes:{{viajes}}</ion-label>
+      </ion-item>
+    </ion-list>
 
   </ion-card>
+
   <ion-card class="center-normal">
     <ion-card-header >
       <h2>Fotos del vehiculo</h2>
@@ -38,4 +49,51 @@
       <h2>{{vehiculo}}</h2>
     </ion-card-content>
   </ion-card>
+  <form [formGroup]="formViaje" (keyup.enter)="viajar()" class="bg-cajita">
+  <ion-card>
+    <ion-card>
+      <ion-card-header>
+          A donde vas?
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input formControlName="destino"></ion-input>
+      </ion-card-content>
+    </ion-card>
+    <ion-card-header>Fecha</ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Fecha</ion-label>
+          <ion-datetime formControlName="fecha">displayFormat="DD/MM/YYYY"
+          pikerFormat="YYYY/MM"
+          [(ngModel)] ="fecha"
+          cancelText = "Cancelar"
+          doneText = "OK">
+          </ion-datetime>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>Hora</ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Hora</ion-label>
+          <ion-datetime formControlName="hora">displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="myDate"></ion-datetime>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+    <ion-item>
+      <ion-label>
+        <p>Precio</p>
+      </ion-label>
+      <h3>$1.617</h3>
+    </ion-item>
+  </ion-card>
+  <ion-item class="buton">
+    <h1><ion-button color="dark" round outline size="large" (click)="viajar()">Viajar</ion-button></h1>
+  </ion-item>
+  </form>
 </ion-content>
+

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-conductor',
@@ -8,8 +11,12 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./conductor.page.scss'],
 })
 export class ConductorPage implements OnInit {
-  currentDate: string = new Date().toLocaleDateString();
-  fecha: string = this.currentDate;
+  formViaje : FormGroup;
+  fechaCorta: string = new Date().toISOString();
+  fecha: string = this.fechaCorta;
+  myDate: String = new Date().toISOString();
+  horaCorta: string = (new Date().getHours()+5).toString();
+  hora: string = this.horaCorta;
   minFecha: string = (new Date().getFullYear()-5).toString();
   maxFecha: string = (new Date().getFullYear()+5).toString();
   conductores: any =[];
@@ -21,7 +28,14 @@ export class ConductorPage implements OnInit {
   image: string;
   vim: string;
   vim2: string;
-  constructor(private activatedRoute:ActivatedRoute,private http: HttpClient) { }
+  viajes: number;
+  constructor(private router: Router, private activatedRoute:ActivatedRoute, private fb: FormBuilder, private http: HttpClient, private alertController: AlertController) { 
+    this.formViaje = this.fb.group({
+      'fecha': new FormControl("",Validators.required),
+      'hora': new FormControl("",Validators.required),
+      'destino': new FormControl("",Validators.required),
+    })
+  }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.paramMap.get("id");
@@ -35,8 +49,7 @@ export class ConductorPage implements OnInit {
       this.image = this.conductores[this.finalId].image;
       this.vim = this.conductores[this.finalId].vim;
       this.vim2 = this.conductores[this.finalId].vim2;
-
-
+      this.viajes = this.conductores[this.finalId].viajes;
     })
     
   }
@@ -56,4 +69,41 @@ export class ConductorPage implements OnInit {
       event.target.complete();
     }, 500);
   }
+
+  async viajar() {{
+    var f = this.formViaje.value;
+    if (this.formViaje.invalid){
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Viaje No Programado',
+        message: 'Asegurate de elegir una Hora antes de pedir un viaje',
+        buttons: ['OK']
+      });
+
+
+      await alert.present();
+      return;
+    }
+  var viaje = {
+    fecha: f.fecha,
+    hora: f.hora
+  }
+  }
+
+  localStorage.setItem('viaje', JSON.stringify(viaje));
+  this.router.navigate(['../menu/welcome'])
+
+  if (!this.formViaje.invalid){
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Viaje Programado con exito',
+      message: 'Su viaje a sido programadao',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+    return;
 }
+  
+  
+  }}

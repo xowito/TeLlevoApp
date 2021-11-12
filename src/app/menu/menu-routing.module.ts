@@ -14,7 +14,13 @@ const routes: Routes = [
     {
       path: 'perfil',
       loadChildren: () => import('../perfil/perfil.module').then( m => m.PerfilPageModule)
-    }]
+    },
+    {
+      path: 'conductor/:id',
+      loadChildren: () => import('../conductor/conductor.module').then( m => m.ConductorPageModule)
+    },]
+
+    
   }
 ];
 

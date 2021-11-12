@@ -33,10 +33,7 @@ const routes: Routes = [
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule),
     canActivate: [IngresadoGuard]
   },
-  {
-    path: 'conductor/:id',
-    loadChildren: () => import('./conductor/conductor.module').then( m => m.ConductorPageModule)
-  },
+
 
 
 

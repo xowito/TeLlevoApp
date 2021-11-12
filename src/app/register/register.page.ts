@@ -57,6 +57,7 @@ export class RegisterPage implements OnInit {
     }
 
     localStorage.setItem('usuario', JSON.stringify(usuario));
+    console.log(localStorage.getItem('usuario'))
     this.router.navigate(['../login'])
   }
 }

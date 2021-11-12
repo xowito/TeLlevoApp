@@ -7,8 +7,8 @@
             "vehiculo": "Chery tiggo 3",
             "image": "kim.jpg",
             "vim": "Chery1.jpg",
-            "vim2": "Chery2.jpg"
-
+            "vim2": "Chery2.jpg",
+            "viajes": 5
         },
         {
             "id": 2,
@@ -17,7 +17,8 @@
             "vehiculo": "Tesla Model S",
             "image": "ElonMusk.jpg",
             "vim": "Tesla1.png",
-            "vim2": "Tesla2.png"
+            "vim2": "Tesla2.png",
+            "viajes": 5
         },
         {
             "id": 3,
@@ -26,8 +27,7 @@
             "vehiculo": "Chevrolet Camaro ZL1",
             "image": "Louis.jpg",
             "vim": "Camaro1.jpg",
-            "vim2": "Camaro2.jpg"
+            "vim2": "Camaro2.jpg",
+            "viajes": 5
         }
-
-
 ]}

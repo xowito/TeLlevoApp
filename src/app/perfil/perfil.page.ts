@@ -11,18 +11,16 @@ export class PerfilPage implements OnInit {
   minFecha: string = (new Date().getFullYear()-5).toString();
   maxFecha: string = (new Date().getFullYear()+5).toString();
 
-
-  nombre = "Ignacio Selman"
+  cuenta = JSON.parse(localStorage.getItem('usuario'));
+  nombre = this.cuenta.User;
   datos = "Ingenieria Informatica"
-
+  Correo = this.cuenta.Correo;
   usuario = []
 
   constructor() { }
 
   ngOnInit() {
-    var usuario = JSON.parse(localStorage.getItem('usuario'));
-
-    var usuarios = this.usuario;
+  
   }
   doRefresh(event) {
 

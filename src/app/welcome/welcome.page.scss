@@ -21,24 +21,6 @@ ion-toolbar{
     color:#FFB71B; 
 }
 
-.card{
-    position: relative;
-    width: 300px;
-    height:300px;
-    margin: 30px;
-    --background: rgba(255,255,255, 0.05);
-    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(10px);
-}
-
-.img{
-    margin-top: 5px;
-    width: 90px;
-    height: 100px;
-    border: 2px;
-    border-radius: 100px;
+.label{
+    padding-left: 8px;
 }
