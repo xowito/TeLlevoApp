@@ -19,7 +19,15 @@
     backdrop-filter: blur(10px);
 }
 
+.header{
+    border-right: 1px solid #add;
+}
+
 p{
     color: #fff;
     line-height: 1.5em;
+}
+
+.center{
+    text-align: center;
 }

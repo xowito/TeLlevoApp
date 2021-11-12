@@ -49,8 +49,9 @@ export class LoginPage implements OnInit {
   recuperar() {
     this.router.navigate(['../recuperar'])
   }
-
-
+  volver(){
+    this.router.navigate(['../home'])
+  }
   doRefresh(event) {
 
     setTimeout(() => {

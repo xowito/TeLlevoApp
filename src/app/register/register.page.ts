@@ -29,7 +29,9 @@ export class RegisterPage implements OnInit {
   }
   ngOnInit() {
   }
-
+  volver(){
+    this.router.navigate(['../home'])
+  }
 
   async guardar() {
     var f = this.formRegistro.value;

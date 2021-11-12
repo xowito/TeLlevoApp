@@ -8,25 +8,22 @@
 
 <ion-content class="bg-content">
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content
-      pullingIcon="chevron-down-circle-outline"
-      pullingText="Pull to refresh"
-      refreshingSpinner="circles"
-      refreshingText="Refreshing...">
+    <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh"
+      refreshingSpinner="circles" refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
   <ion-card class="card">
-    <ion-card-header>
-      <img src="">
-    </ion-card-header>
+    <img class="center-normal" src="../../assets/image/user.png">
     <ion-card-content class="content">
-        <ion-item *ngFor="let user of usuario">
-        </ion-item>
-        <h1 style="color: white;">hola...</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-          when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      <ion-item *ngFor="let user of usuario">
+      </ion-item>
+      <ion-card-title>
+        <h1 style="color: white;">{{nombre}}</h1>
+        <hr>
+      </ion-card-title>
+      <p >{{datos}}</p>
+      <hr>
+      <p>Hora actual: {{fecha.substr(11,5)}}</p>
+      <hr>
+      <p>Fecha actual: {{fecha.substr(0,10)}}</p>
     </ion-card-content>
-  </ion-card>
-</ion-content>

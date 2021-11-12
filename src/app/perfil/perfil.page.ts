@@ -6,6 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
+  fechaCorta: string = new Date().toISOString();
+  fecha: string = this.fechaCorta;
+  minFecha: string = (new Date().getFullYear()-5).toString();
+  maxFecha: string = (new Date().getFullYear()+5).toString();
+
+
+  nombre = "Ignacio Selman"
+  datos = "Ingenieria Informatica"
 
   usuario = []
 
@@ -22,4 +30,5 @@ export class PerfilPage implements OnInit {
       event.target.complete();
     }, 500);
   }
+
 }

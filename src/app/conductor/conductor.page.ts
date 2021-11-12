@@ -8,6 +8,10 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./conductor.page.scss'],
 })
 export class ConductorPage implements OnInit {
+  currentDate: string = new Date().toLocaleDateString();
+  fecha: string = this.currentDate;
+  minFecha: string = (new Date().getFullYear()-5).toString();
+  maxFecha: string = (new Date().getFullYear()+5).toString();
   conductores: any =[];
   id: any;
   finalId: number;

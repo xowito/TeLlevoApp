@@ -8,8 +8,13 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./recuperar.page.scss'],
 })
 export class RecuperarPage implements OnInit {
+  formRec: FormGroup;
 
-  constructor(private router: Router, private alertController: AlertController) {
+  constructor(private router: Router, private alertController: AlertController, private fb: FormBuilder) {
+    this.formRec = this.fb.group({
+      'User': new FormControl("",Validators.required),
+      'Correo': new FormControl("",Validators.required)
+    })
 
     }
   doRefresh(event) {
@@ -21,20 +26,31 @@ export class RecuperarPage implements OnInit {
     }, 500);
   }
   async enviar() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Correo enviado',
-      message: 'Se ha enviado un correo para reestablecer su contraseña',
-      buttons: ['OK']
-    });
+    var f = this.formRec.value;
 
-    await alert.present();
-    return;
+    if (this.formRec.invalid){
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Correo enviado',
+        message: 'Se ha enviado un correo para reestablecer su contraseña',
+        buttons: ['OK']
+      });
+  
+      await alert.present();
+      return;
+    }
+    var usuario = {
+      User: f.User,
+      Correo: f.Correo
+    }
+
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+    this.router.navigate(['../home'])
   }
 ngOnInit() {
 }
 
 volver(){
-  this.router.navigate(['../login'])
+  this.router.navigate(['../home'])
 }
 }
