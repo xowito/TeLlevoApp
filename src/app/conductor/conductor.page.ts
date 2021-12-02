@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-conductor',
   templateUrl: './conductor.page.html',
@@ -66,7 +67,9 @@ export class ConductorPage implements OnInit {
       event.target.complete();
     }, 500);
   }
-
+  destino(){
+    this.router.navigate(['../menu/destino']);
+  }
   async viajar() {{
     var f = this.formViaje.value;
     if (this.formViaje.invalid){

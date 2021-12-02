@@ -18,6 +18,10 @@ const routes: Routes = [
     {
       path: 'conductor/:id',
       loadChildren: () => import('../conductor/conductor.module').then( m => m.ConductorPageModule)
+    },
+    {
+      path: 'destino',
+      loadChildren: () => import('../destino/destino.module').then( m => m.DestinoPageModule)
     },]
 
     

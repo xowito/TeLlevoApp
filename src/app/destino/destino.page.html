@@ -1,25 +1,13 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="UpdateSearchResults()" placeholder="Search for a place"  (ionClear)="ClearAutocomplete()"></ion-searchbar>
   </ion-toolbar>
-</ion-header>
-
-<ion-content class="bg-content">
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh"
-      refreshingSpinner="circles" refreshingText="Refreshing...">
-    </ion-refresher-content>
-  </ion-refresher>
-  <h1 class="center titulo">Conductores</h1>
-  <ion-list *ngFor="let conductor of conductores">
-    <ion-item>
-      <ion-avatar>
-        <img src="../../assets/image/{{conductor.image}}">
-      </ion-avatar>
-      <ion-label class="label">{{conductor.nombre}}</ion-label>
-      <ion-button color="clear" outline [routerLink]="['/menu/conductor',conductor.id]">Programar Viaje</ion-button>
+  <ion-list [hidden]="autocompleteItems.length == 0">
+    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="SelectSearchResult(item)">
+      {{ item.description }}
     </ion-item>
   </ion-list>
   <ion-row>    
@@ -29,7 +17,9 @@
          Mi ubicación
         </ion-button>
     </ion-col>
-  </ion-row>
+  </ion-row>  
+</ion-header>
+<ion-content> 
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button (click)="ShowCords()" ion-fab color="tertiary">
       <ion-icon name="information-circle-outline"></ion-icon>
@@ -40,5 +30,5 @@
       <ion-icon name="pin" size="large" color="danger"></ion-icon>      
     </div>
     <div #map id="map"  style="height: 100%;"></div>
-  </div>
+  </div>   
 </ion-content>
