@@ -14,11 +14,8 @@ export class ConductorPage implements OnInit {
   formViaje : FormGroup;
   fechaCorta: string = new Date().toISOString();
   fecha: string = this.fechaCorta;
-  myDate: String = new Date().toISOString();
   horaCorta: string = (new Date().getHours()+5).toString();
   hora: string = this.horaCorta;
-  minFecha: string = (new Date().getFullYear()-5).toString();
-  maxFecha: string = (new Date().getFullYear()+5).toString();
   conductores: any =[];
   id: any;
   finalId: number;

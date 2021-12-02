@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class PerfilPage implements OnInit {
   fechaCorta: string = new Date().toISOString();
   fecha: string = this.fechaCorta;
-  minFecha: string = (new Date().getFullYear()-5).toString();
-  maxFecha: string = (new Date().getFullYear()+5).toString();
+  horaCorta: string = (new Date().getHours()+5).toString();
+  hora: string = this.horaCorta;
 
   cuenta = JSON.parse(localStorage.getItem('usuario'));
   nombre = this.cuenta.User;

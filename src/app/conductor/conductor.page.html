@@ -80,7 +80,12 @@
       <ion-list>
         <ion-item>
           <ion-label>Hora</ion-label>
-          <ion-datetime formControlName="hora">displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="myDate"></ion-datetime>
+          <ion-datetime formControlName="hora">
+            displayFormat="HH:mm" 
+            pickerFormat="HH:mm" 
+            [(ngModel)]="horaCorta"
+            cancelText="Cancelar"
+            doneText="OK"></ion-datetime>
         </ion-item>
       </ion-list>
     </ion-card-content>
