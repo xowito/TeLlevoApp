@@ -1,5 +1,3 @@
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
@@ -7,11 +5,11 @@ import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@io
 declare var google;
 
 @Component({
-  selector: 'app-welcome',
-  templateUrl: './welcome.page.html',
-  styleUrls: ['./welcome.page.scss'],
+  selector: 'app-destino',
+  templateUrl: './destino.page.html',
+  styleUrls: ['./destino.page.scss'],
 })
-export class WelcomePage implements OnInit {
+export class DestinoPage implements OnInit {
   @ViewChild('map',  {static: false}) mapElement: ElementRef;
   map: any;
   address:string;
@@ -22,33 +20,16 @@ export class WelcomePage implements OnInit {
   location: any;
   placeid: any;
   GoogleAutocomplete: any;
-  conductores: any =[];
-
-
-  constructor( private http: HttpClient,private geolocation: Geolocation,
+  constructor(private geolocation: Geolocation,
     private nativeGeocoder: NativeGeocoder,    
-    public zone: NgZone,) { this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
+    public zone: NgZone,) {this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
       this.autocomplete = { input: '' };
       this.autocompleteItems = []; }
 
-  doRefresh(event) {
-    console.log('Begin async operation');
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
-    }, 500);
-  }
-
-
   ngOnInit() {
     this.loadMap(); 
-    this.getConductores().subscribe(res =>{
-      console.log("Res",res)
-      this.conductores = res;
-
-    })
   }
+
   loadMap() {
     
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -131,14 +112,5 @@ export class WelcomePage implements OnInit {
  
   GoTo(){
     return window.location.href = 'https://www.google.com/maps/search/?api=1&query=Google&query_place_id='+this.placeid;
-  }
-  getConductores(){
-    return this.http
-    .get('assets/files/conductores.json')
-    .pipe(
-      map((resp: any) =>{
-        return resp.data
-      })
-    )
   }
 }

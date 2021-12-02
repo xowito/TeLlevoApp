@@ -10,20 +10,21 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { PerfilPipe } from './perfil.pipe';
+
 
 @NgModule({
-  declarations: [AppComponent, PerfilPipe],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, 
     FormsModule,
     ReactiveFormsModule, 
     IonicModule.forRoot(), 
-    AppRoutingModule,
-    Geolocation,    
-    NativeGeocoder, 
+    AppRoutingModule,  
     HttpClientModule,],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    Geolocation,
+    NativeGeocoder, 
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
