@@ -53,11 +53,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
-<<<<<<< HEAD
     "cordova-android": "^9.1.0",
-=======
-    "cordova-plugin-add-swift-support": "^2.0.2",
->>>>>>> 06f16ba5fccf184e4b3dc253dbf317527d6b5068
     "cordova-plugin-advanced-http": "^3.2.2",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-file": "^6.0.2",
@@ -85,15 +81,7 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-<<<<<<< HEAD
       "cordova-plugin-advanced-http": {},
-=======
-      "cordova-plugin-advanced-http": {
-        "ANDROIDBLACKLISTSECURESOCKETPROTOCOLS": "SSLv3,TLSv1"
-      },
-      "cordova-plugin-nativegeocoder": {},
-      "cordova-plugin-geolocation": {},
->>>>>>> 06f16ba5fccf184e4b3dc253dbf317527d6b5068
       "cordova-plugin-whitelist": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
