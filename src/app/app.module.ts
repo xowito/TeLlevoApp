@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
@@ -16,11 +17,11 @@ import { PerfilPipe } from './perfil.pipe';
   entryComponents: [],
   imports: [BrowserModule, 
     FormsModule,
-    Geolocation,    
-    NativeGeocoder,
     ReactiveFormsModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
+    Geolocation,    
+    NativeGeocoder, 
     HttpClientModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

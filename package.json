@@ -70,7 +70,9 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-advanced-http": {}
+      "cordova-plugin-advanced-http": {},
+      "cordova-plugin-nativegeocoder": {},
+      "cordova-plugin-geolocation": {}
     }
   }
 }
